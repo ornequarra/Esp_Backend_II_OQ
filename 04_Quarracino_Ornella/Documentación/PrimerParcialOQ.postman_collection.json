@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "cc497351-52aa-4ea2-944b-0e37248452a8",
+		"name": "PrimerParcialOQ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18758999"
+	},
+	"item": [
+		{
+			"name": "Get OIDC Discovery",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/realms/PrimerParcialOQ/.well-known/openid-configuration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"PrimerParcialOQ",
+						".well-known",
+						"openid-configuration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Bills",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "authRequestParams",
+							"value": [
+								{
+									"key": "redirect_uri",
+									"value": "https://oauth.pstmn.io/v1/callback",
+									"enabled": true,
+									"send_as": "request_url"
+								}
+							],
+							"type": "any"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "eXYqDAYEy7DSBf5SPB7ecPF89lQqvpbV",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "api-gateway-client",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:8080/realms/PrimerParcialOQ/protocol/openid-connect/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "http://localhost:8080/realms/PrimerParcialOQ/protocol/openid-connect/auth",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenName",
+							"value": "TokenABills",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:63918/api/v1/bills/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "63918",
+					"path": [
+						"api",
+						"v1",
+						"bills",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
